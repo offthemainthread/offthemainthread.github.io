@@ -1,0 +1,47 @@
+---
+import { profile } from "../data/site";
+---
+<section id="contact" class="section">
+  <div class="container">
+    <div class="contact-card reveal">
+      <div class="contact-glow" aria-hidden="true"></div>
+      <div class="contact-content">
+        <p class="eyebrow">Contact</p>
+        <h2 class="contact-title">Get in touch</h2>
+        <p class="contact-sub">The fastest way to reach me is email. Happy to talk about backend, distributed systems, or a role.</p>
+        <div class="contact-actions">
+          <a href={`mailto:${profile.email}`} class="btn btn-primary">{profile.email}</a>
+          <a href={profile.socials.linkedin} target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+          <a href={profile.socials.github} target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
+        </div>
+        <p class="contact-loc">{profile.location}</p>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .contact-card {
+    position: relative;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    padding: clamp(2rem, 6vw, 3.5rem);
+    overflow: hidden;
+    text-align: center;
+  }
+  .contact-glow {
+    position: absolute; inset: auto 0 -60% 0; height: 120%;
+    background: radial-gradient(60% 60% at 50% 100%, var(--accent-soft), transparent 70%);
+    opacity: 0.8; pointer-events: none;
+  }
+  .contact-content { position: relative; z-index: 1; max-width: 620px; margin-inline: auto; }
+  .contact-content .eyebrow { justify-content: center; }
+  .contact-content .eyebrow::before { display: none; }
+  .contact-title { font-size: clamp(1.7rem, 4vw, 2.5rem); margin-bottom: 0.9rem; }
+  .contact-sub { color: var(--text-muted); margin-bottom: 1.9rem; }
+  .contact-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center; }
+  .contact-loc {
+    margin-top: 1.6rem; font-family: var(--font-mono);
+    font-size: 0.82rem; color: var(--text-faint);
+  }
+</style>

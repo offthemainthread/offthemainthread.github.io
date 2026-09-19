@@ -1,0 +1,227 @@
+/* ==========================================================================
+   Design tokens
+   --------------------------------------------------------------------------
+   Two accents:
+     --accent    (blue)    primary: links, buttons, focus, brand
+     --secondary (teal)    used sparingly: labels, small markers, badges
+   Change these to re-theme the whole site. Dark overrides live under
+   [data-theme="dark"].
+   ========================================================================== */
+
+:root {
+  /* --- Primary accent (blue) --- */
+  --accent: #2563eb;
+  --accent-strong: #1d4ed8;
+  --accent-soft: #eff6ff;
+  --accent-contrast: #ffffff;
+
+  /* --- Secondary accent (teal) --- */
+  --secondary: #0d9488;
+  --secondary-soft: #d6f3ee;
+
+  /* --- Neutral surfaces & text (light) --- */
+  --bg: #ffffff;
+  --bg-subtle: #f7f8fa;
+  --surface: #ffffff;
+  --surface-2: #f2f4f7;
+  --border: #e7e9ee;
+  --border-strong: #d6dae1;
+  --text: #16181d;
+  --text-muted: #565c66;
+  --text-faint: #8b919b;
+
+  /* --- Typography --- */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", "Fira Code", Menlo,
+    Consolas, monospace;
+
+  /* --- Scale & shape --- */
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-lg: 18px;
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.04),
+    0 1px 3px rgba(16, 24, 40, 0.05);
+  --shadow-md: 0 4px 14px rgba(16, 24, 40, 0.06),
+    0 2px 6px rgba(16, 24, 40, 0.04);
+  --maxw: 940px;
+  --gutter: clamp(1.25rem, 5vw, 2.25rem);
+
+  /* --- Motion --- */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur: 0.3s;
+
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --accent: #60a5fa;
+  --accent-strong: #93c5fd;
+  --accent-soft: #172a4a;
+  --accent-contrast: #0b1220;
+
+  --secondary: #2dd4bf;
+  --secondary-soft: #103029;
+
+  --bg: #0c0f14;
+  --bg-subtle: #0f131a;
+  --surface: #12161d;
+  --surface-2: #171c25;
+  --border: #222835;
+  --border-strong: #2f3745;
+  --text: #eef1f6;
+  --text-muted: #a4adba;
+  --text-faint: #6a7280;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
+
+  color-scheme: dark;
+}
+
+/* ==========================================================================
+   Reset & base
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 650;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s var(--ease);
+}
+a:hover { color: var(--accent-strong); }
+
+img { max-width: 100%; display: block; }
+
+::selection { background: var(--accent); color: var(--accent-contrast); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   Layout helpers
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section { padding-block: clamp(3.5rem, 8vw, 6rem); }
+.section-alt { background: var(--bg-subtle); }
+
+/* Small quiet label above a section title */
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-size: clamp(1.4rem, 3vw, 1.85rem);
+  margin-bottom: 0.6rem;
+}
+
+.section-lead {
+  color: var(--text-muted);
+  max-width: 52ch;
+  font-size: 0.98rem;
+}
+
+.section-head { margin-bottom: clamp(1.75rem, 4vw, 2.5rem); }
+
+/* ==========================================================================
+   Buttons & chips
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.62rem 1.05rem;
+  border-radius: var(--radius-sm);
+  font-weight: 540;
+  font-size: 0.92rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s var(--ease), background 0.2s var(--ease),
+    border-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+.btn:active { transform: translateY(1px); }
+
+.btn-primary { background: var(--accent); color: var(--accent-contrast); }
+.btn-primary:hover { background: var(--accent-strong); color: var(--accent-contrast); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.68rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   Scroll-reveal (progressive enhancement; visible without JS)
+   ========================================================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.55s var(--ease), transform 0.55s var(--ease);
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+.no-js .reveal { opacity: 1; transform: none; }

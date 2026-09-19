@@ -1,0 +1,70 @@
+---
+import { experience } from "../data/site";
+---
+<section id="experience" class="section section-alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Career</p>
+      <h2 class="section-title">Experience</h2>
+    </div>
+
+    <ol class="timeline">
+      {experience.map((job) => (
+        <li class="tl-item reveal">
+          <div class="tl-dot" aria-hidden="true"></div>
+          <div class="tl-card">
+            <div class="tl-top">
+              <div>
+                <h3 class="tl-role">{job.role}</h3>
+                <p class="tl-company">{job.company} · <span>{job.location}</span></p>
+              </div>
+              <span class="tl-period">{job.period}</span>
+            </div>
+            <ul class="tl-points">
+              {job.highlights.map((h) => <li>{h}</li>)}
+            </ul>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+<style>
+  .timeline { list-style: none; padding: 0; margin: 0; position: relative; }
+  .timeline::before {
+    content: ""; position: absolute; left: 7px; top: 6px; bottom: 6px;
+    width: 2px; background: var(--border-strong);
+  }
+  .tl-item { position: relative; padding-left: 2.5rem; padding-bottom: 2rem; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-dot {
+    position: absolute; left: 0; top: 6px;
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--bg); border: 3px solid var(--secondary);
+    box-shadow: 0 0 0 4px var(--bg-subtle);
+  }
+  .tl-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: border-color 0.2s var(--ease), transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+  }
+  .tl-card:hover { border-color: var(--border-strong); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  .tl-top {
+    display: flex; justify-content: space-between; align-items: baseline;
+    gap: 1rem 1.5rem; flex-wrap: wrap; margin-bottom: 0.9rem;
+  }
+  .tl-role { font-size: 1.12rem; }
+  .tl-company { color: var(--text-muted); font-size: 0.92rem; margin-top: 0.15rem; }
+  .tl-company span { color: var(--text-faint); }
+  .tl-period {
+    font-family: var(--font-mono); font-size: 0.78rem; color: var(--secondary);
+    background: var(--secondary-soft); padding: 0.28rem 0.65rem; border-radius: 999px; white-space: nowrap;
+  }
+  .tl-points { margin: 0; padding-left: 1.1rem; display: grid; gap: 0.55rem; }
+  .tl-points li { color: var(--text-muted); font-size: 0.94rem; line-height: 1.55; }
+  .tl-points li::marker { color: var(--secondary); }
+  @media (max-width: 560px) { .tl-card { padding: 1.1rem 1.15rem; } }
+</style>

@@ -41,6 +41,9 @@ const description = `Curriculum vitae of ${profile.name}, ${profile.role}. Downl
               <ul class="cv-points">
                 {job.highlights.map((h) => <li>{h}</li>)}
               </ul>
+              <ul class="cv-tags" aria-label="Technologies and concepts">
+                {job.tags.map((t) => <li class="chip">{t}</li>)}
+              </ul>
             </article>
           ))}
         </section>
@@ -127,6 +130,7 @@ const description = `Curriculum vitae of ${profile.name}, ${profile.role}. Downl
   }
   .cv-points li { color: var(--text-muted); font-size: 0.93rem; line-height: 1.55; }
   .cv-points li::marker { color: var(--secondary); }
+  .cv-tags { list-style: none; margin: 0.9rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
 
   .cv-skills { margin: 0; display: grid; gap: 0.9rem; }
   .cv-skill-row {

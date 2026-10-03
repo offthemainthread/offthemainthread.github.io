@@ -23,6 +23,9 @@ import { experience } from "../data/site";
             <ul class="tl-points">
               {job.highlights.map((h) => <li>{h}</li>)}
             </ul>
+            <ul class="tl-tags" aria-label="Technologies and concepts">
+              {job.tags.map((t) => <li class="chip">{t}</li>)}
+            </ul>
           </div>
         </li>
       ))}
@@ -66,5 +69,6 @@ import { experience } from "../data/site";
   .tl-points { margin: 0; padding-left: 1.1rem; display: grid; gap: 0.55rem; }
   .tl-points li { color: var(--text-muted); font-size: 0.94rem; line-height: 1.55; }
   .tl-points li::marker { color: var(--secondary); }
+  .tl-tags { list-style: none; margin: 1.1rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
   @media (max-width: 560px) { .tl-card { padding: 1.1rem 1.15rem; } }
 </style>

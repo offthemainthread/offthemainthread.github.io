@@ -14,7 +14,7 @@ export const profile = {
   yearsExperience: 9,
   // Downloadable CV (served from /public).
   resumeFile: "/Zeeshan-Mahmood-CV.pdf",
-  resumeUpdated: "September 2026",
+  resumeUpdated: "October 2026",
   socials: {
     linkedin: "https://www.linkedin.com/in/zeeshanmahmood08",
     github: "https://github.com/offthemainthread",
@@ -38,6 +38,7 @@ export type Experience = {
   period: string;
   location: string;
   highlights: string[];
+  tags: string[];
 };
 
 export const experience: Experience[] = [
@@ -47,12 +48,13 @@ export const experience: Experience[] = [
     period: "May 2026 – Present",
     location: "Ontario, Canada",
     highlights: [
-      "Architected and built a full-stack peer-to-peer marketplace end to end as sole developer: a cross-platform mobile app and web admin portal on Flutter and Supabase, structured with Clean Architecture and Riverpod.",
-      "Designed a Stripe Connect payments system with escrow-style authorize-and-capture flows, deposit holds, seller payouts, and automated dispute settlement, implemented through serverless edge functions and webhooks.",
-      "Architected a real-time location-tracking and safety platform (Flutter, Firebase, Google Maps) designed to scale to millions of location updates, with an event-driven geofencing pipeline that pushes and escalates alerts.",
-      "Secured multi-tenant data with Postgres row-level security and Firestore RBAC rules, covered by automated tests.",
-      "Established TDD and CI quality gates across unit, widget, integration and end-to-end tests, and isolated third-party SDKs behind provider-agnostic interfaces so vendors can be swapped without UI changes.",
+      "Architected and shipped a peer-to-peer marketplace solo in 2 months, now in active beta with 200+ testers: a cross-platform Flutter app and web admin portal on Supabase using Clean Architecture and Riverpod.",
+      "Designed a Stripe Connect payments system (authorize-and-capture escrow, deposit holds, seller payouts, automated dispute settlement) on serverless edge functions and webhooks, removing manual payout and dispute handling.",
+      "Built a real-time location-tracking and safety platform (Flutter, Firebase, Google Maps) with an event-driven geofencing pipeline that sends push alerts and escalates unacknowledged ones.",
+      "Enforced multi-tenant data isolation with Postgres row-level security and Firestore RBAC rules (zero cross-tenant access in security tests), and set up TDD and CI gates across unit, widget, integration and end-to-end tests.",
+      "Isolated third-party SDKs behind provider-agnostic interfaces, so database and auth swaps needed no UI changes.",
     ],
+    tags: ["Flutter", "Supabase", "PostgreSQL", "Firebase", "Stripe Connect", "Clean Architecture", "Serverless", "Multi-tenancy", "TDD"],
   },
   {
     company: "Careem",
@@ -60,12 +62,13 @@ export const experience: Experience[] = [
     period: "Jul 2024 – Apr 2026",
     location: "Islamabad, Pakistan",
     highlights: [
-      "Engineered and scaled an IoT platform integrating 1000+ smart mobility vehicles from two vendors into Go-based microservices over TCP, with IMEI-based connection validation.",
-      "Improved reliability and performance: migrated observability to Dynatrace (−40% MTTR), tuned slow DB queries (−25% response times), and moved IoT device updates to Kafka (−10% update latency, decoupled from other services).",
-      "Delivered compliance and fraud-prevention features, including geo-fencing in the backend and operations portal (100% regulatory compliance) and a backend pre-authorization workflow that cut financial losses by ~20%.",
-      "Strengthened release safety and incident response with feature toggles for staged rollouts, RFCs, product-readiness reviews, and on-call leadership (−35% outage recovery time).",
-      "Raised the team's test-coverage standard to 90% across unit, integration and acceptance tests while shipping 5+ operations-portal features and resolving 20+ critical bugs; mentored and onboarded new engineers.",
+      "Scaled an IoT platform by integrating 1000+ smart mobility vehicles from two vendors into Go microservices over TCP with IMEI-based connection validation.",
+      "Cut MTTR by 40% by migrating observability to Dynatrace, sped up responses by 25% by tuning slow database queries, and reduced IoT update latency by 10% by moving to Kafka events.",
+      "Reduced financial losses by ~20% with a backend pre-authorization workflow, and delivered geo-fencing across the backend and the Next.js operations portal to meet regulatory requirements.",
+      "Designed for graceful degradation over full failure and led incident response, cutting outage recovery time by 35% through staged rollouts, RFCs, Product Readiness Reviews and incident documentation.",
+      "Raised the team's test coverage standard to 90%, shipped 5+ operations portal features, resolved 20+ critical bugs, and mentored and onboarded new engineers.",
     ],
+    tags: ["Go", "Java", "Spring Boot", "Kafka", "Microservices", "IoT", "Dynatrace", "Next.js", "Incident response", "Feature flags", "TDD"],
   },
   {
     company: "Fiber Mountain",
@@ -79,6 +82,7 @@ export const experience: Experience[] = [
       "Led the transition from a synchronous system architecture to an events-based framework, improving real-time data update speed ~15%.",
       "Migrated Git repositories from legacy on-prem systems to GitHub with sanity pipelines, branch protection, and code-owner configurations.",
     ],
+    tags: ["Event-driven architecture", "AWS", "GitHub Actions", "CI/CD", "TDD", "RFCs", "Mentoring"],
   },
   {
     company: "Retailo",
@@ -92,6 +96,7 @@ export const experience: Experience[] = [
       "Standardized logging and internal API documentation, cutting cloud costs 15%+, and designed a custom architecture for distributed transactions across microservices.",
       "Integrated system monitoring (New Relic, Sentry) for deeper insight into bottlenecks and service crashes.",
     ],
+    tags: ["Node.js", "Microservices", "Distributed transactions", "GitLab CI/CD", "New Relic", "Sentry", "Authorization"],
   },
   {
     company: "Xgrid",
@@ -103,6 +108,7 @@ export const experience: Experience[] = [
       "Developed and maintained the frontend for a scalable system handling large data volumes with Angular v8, REST APIs, and WebSockets.",
       "Built serverless APIs with Auth0 authentication using AWS Lambda and API Gateway.",
     ],
+    tags: ["Angular", "WebSockets", "REST APIs", "AWS Lambda", "API Gateway", "Auth0", "Service workers"],
   },
 ];
 
@@ -134,7 +140,7 @@ export const skillGroups: SkillGroup[] = [
   { label: "Languages", items: ["Go", "TypeScript", "JavaScript", "Dart", "Java", "Bash"] },
   {
     label: "Backend",
-    items: ["Node.js", "NestJS", "Microservices", "REST APIs", "WebSockets", "Event-Driven Architecture", "System Design", "Clean Architecture"],
+    items: ["Node.js", "NestJS", "Spring Boot", "Microservices", "REST APIs", "WebSockets", "Event-Driven Architecture", "System Design", "Clean Architecture"],
   },
   { label: "Frontend & Mobile", items: ["React", "Next.js", "Angular", "Flutter", "Riverpod"] },
   { label: "Cloud & Data", items: ["AWS", "Firebase", "Supabase", "PostgreSQL", "Kafka", "Stripe Connect"] },

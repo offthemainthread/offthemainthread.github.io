@@ -11,7 +11,7 @@ export const profile = {
     "Software architect and full-stack engineer with deep backend and distributed-systems experience.",
   location: "ON, Canada",
   email: "hello@offthemainthread.com",
-  yearsExperience: 9,
+  yearsExperience: 8,
   // Downloadable CV (served from /public).
   resumeFile: "/Zeeshan-Mahmood-CV.pdf",
   resumeUpdated: "October 2026",
@@ -21,12 +21,12 @@ export const profile = {
   },
   // Short intro shown in the hero.
   intro:
-    "Software architect and full-stack engineer with ~9 years of experience, from IoT platforms and microservices serving 50K+ users to a full cross-platform marketplace built end to end. Strongest on the backend and distributed systems, and comfortable across the stack and on mobile.",
+    "Software architect and full-stack engineer with 8 years of experience, from IoT platforms and microservices serving 50K+ users to a full cross-platform marketplace built end to end. Strongest on the backend and distributed systems, and comfortable across the stack and on mobile.",
   // Subtle availability note shown in the hero.
   status: "Open to full-stack, backend & architecture roles",
   // Longer about paragraphs.
   about: [
-    "Over the past nine years I've worked across the stack, but my home is on the backend: distributed systems, microservices, event-driven architectures, and the observability and CI/CD tooling that keeps them healthy. I've led migrations, cut incident recovery times, and built platforms that scale.",
+    "Over the past eight years I've worked across the stack, but my home is on the backend: distributed systems, microservices, event-driven architectures, and the observability and CI/CD tooling that keeps them healthy. I've led migrations, cut incident recovery times, and built platforms that scale.",
     "I've shipped in Go, Node.js/NestJS, and TypeScript on AWS, with Kafka for event streaming and Dynatrace, New Relic, and Sentry for observability. More recently I've architected and built full products end to end, like a cross-platform Flutter app with a Supabase/Postgres backend and Stripe Connect payments. I still enjoy the engineering-leadership side too: authoring RFCs, running product-readiness reviews, mentoring teammates, and raising the bar on quality and delivery speed.",
     "I'm pursuing a Master of Applied Computing at Wilfrid Laurier University (2025 to 2027) and hold a Bachelor of Mechatronics Engineering from NUST CEME. I'm based in Brantford, Ontario.",
   ],

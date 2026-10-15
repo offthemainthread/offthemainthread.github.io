@@ -28,7 +28,7 @@ export const profile = {
   about: [
     "Over the past eight years I've worked across the stack, but my home is on the backend: distributed systems, microservices, event-driven architectures, and the observability and CI/CD tooling that keeps them healthy. I've led migrations, cut incident recovery times, and built platforms that scale.",
     "I've shipped in Go, Node.js/NestJS, and TypeScript on AWS, with Kafka for event streaming and Dynatrace, New Relic, and Sentry for observability. More recently I've architected and built full products end to end, like a cross-platform Flutter app with a Supabase/Postgres backend and Stripe Connect payments. I still enjoy the engineering-leadership side too: authoring RFCs, running product-readiness reviews, mentoring teammates, and raising the bar on quality and delivery speed.",
-    "I'm pursuing a Master of Applied Computing at Wilfrid Laurier University (2025 to 2027) and hold a Bachelor of Mechatronics Engineering from NUST CEME. I'm based in Brantford, Ontario.",
+    "I'm pursuing a Master of Applied Computing at Wilfrid Laurier University (2025 to 2026) and hold a Bachelor of Mechatronics Engineering from NUST CEME. I'm based in Brantford, Ontario.",
   ],
 };
 
@@ -124,7 +124,7 @@ export const education: Education[] = [
     degree: "Master of Applied Computing",
     school: "Wilfrid Laurier University",
     location: "Canada",
-    period: "Sep 2025 – Dec 2027 (Expected)",
+    period: "Sep 2025 – Dec 2026 (Expected)",
   },
   {
     degree: "Bachelor of Mechatronics Engineering",
